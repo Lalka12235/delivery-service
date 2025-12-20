@@ -1,7 +1,7 @@
 all = (
     'UserEntity',
     'OrderEntity',
-    'RatingEntity',
+    'ReviewEntity',
     'AddressEntity',
     'RestaurantEntity',
     'DishEntity',
@@ -11,7 +11,7 @@ all = (
 
 from app.domain.entity.user import UserEntity
 from app.domain.entity.order import OrderEntity
-from app.domain.entity.rating import RatingEntity
+from app.domain.entity.review import ReviewEntity
 from app.domain.entity.address import AddressEntity
 from app.domain.entity.restaurant import RestaurantEntity
 from app.domain.entity.dish import DishEntity

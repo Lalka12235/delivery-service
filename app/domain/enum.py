@@ -9,8 +9,9 @@ class RoleType(Enum):
 class OrderStatus(Enum):
     PENDING = 'pending'
     COOKING = 'cooking'
-    DELIVERY = 'delivery'
     READY = 'ready'
+    DELIVERY = 'delivery'
+    DELIVERED = 'delivered'
 
 
 class CourierStatus(Enum):

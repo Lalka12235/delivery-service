@@ -4,8 +4,9 @@ from datetime import datetime
 
 
 @dataclass(slots=True,frozen=True)
-class RatingEntity:
+class ReviewEntity:
     id: uuid.UUID
+    title: str
     description: str
     rating: float
     user_id: uuid.UUID
