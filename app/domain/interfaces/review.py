@@ -28,7 +28,7 @@ class ReviewRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update_review(self,review_id: uuid.UUID,review_data: dict[str,Any]) -> bool:
+    def update_review(self,review: ReviewEntity) -> bool:
         raise NotImplementedError
 
     @abstractmethod

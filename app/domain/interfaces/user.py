@@ -20,7 +20,7 @@ class UserRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update_user(self,user_id: uuid.UUID,user: dict[str,Any]) -> bool:
+    def update_user(self,user: UserEntity) -> bool:
         raise NotImplementedError
 
     @abstractmethod

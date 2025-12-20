@@ -10,3 +10,4 @@ class AddressEntity:
     house_number: str
     apartment_number: str
     user_id: uuid.UUID | None
+    restaurant_id: uuid.UUID | None

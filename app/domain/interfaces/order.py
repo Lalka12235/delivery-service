@@ -28,7 +28,7 @@ class OrderRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update_order(self,order_id: uuid.UUID,order_data: dict[str,Any]) -> OrderEntity:
+    def update_order(self,order: OrderEntity) -> OrderEntity:
         raise NotImplementedError
 
     @abstractmethod

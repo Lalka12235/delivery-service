@@ -20,7 +20,7 @@ class RestaurantRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update(self,restaurant_id: uuid.UUID,restaurant: dict[str,Any]) -> RestaurantEntity:
+    def update(self,restaurant: RestaurantEntity) -> RestaurantEntity:
         raise NotImplementedError
 
     @abstractmethod
