@@ -9,5 +9,6 @@ class AddressEntity:
     street: str
     house_number: str
     apartment_number: str
+    floor: int
     user_id: uuid.UUID | None
     restaurant_id: uuid.UUID | None

@@ -8,4 +8,5 @@ class OrderItemEntity:
     quantity: int
     price_at_purchase: int
     order_id: uuid.UUID
-    dish_id: uuid.UUID
+    dish_id: uuid.UUID | None
+    product_id: uuid.UUID | None

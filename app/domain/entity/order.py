@@ -15,6 +15,7 @@ class OrderEntity:
     delivery_time: datetime
     created_at: datetime
     updated_at: datetime
-    restaurant_id: uuid.UUID
+    restaurant_id: uuid.UUID | None
+    shop_id: uuid.UUID | None
     courier_id: uuid.UUID | None
     user_id: uuid.UUID
