@@ -1,22 +1,23 @@
 from abc import ABC,abstractmethod
-import uuid
-from typing import Any
 
 from app.domain.entity import OrderItemEntity
+from app.domain.entity.dish import DishID
+from app.domain.entity.order import OrderID
+from app.domain.entity.order_item import OrderItemID
 
 
 class OrderItemRepository(ABC):
 
     @abstractmethod
-    def get_orders_item_by_id(self,order_item_id: uuid.UUID) -> list[OrderItemEntity]:
+    def get_orders_item_by_id(self,order_item_id: OrderItemID) -> list[OrderItemEntity]:
         raise NotImplementedError
 
     @abstractmethod
-    def get_orders_items_by_order_id(self,order_id: uuid.UUID) -> list[OrderItemEntity]:
+    def get_orders_items_by_order_id(self,order_id: OrderID) -> list[OrderItemEntity]:
         raise NotImplementedError
 
     @abstractmethod
-    def get_orders_item_by_dish_id(self,dish_id: uuid.UUID) -> list[OrderItemEntity]:
+    def get_orders_item_by_dish_id(self,dish_id: DishID) -> list[OrderItemEntity]:
         raise NotImplementedError
 
     @abstractmethod
@@ -28,5 +29,5 @@ class OrderItemRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_order_item(self,order_item_id: uuid.UUID) -> bool:
+    def delete_order_item(self,order_item_id: OrderItemID) -> bool:
         raise NotImplementedError

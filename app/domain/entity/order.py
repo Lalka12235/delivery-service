@@ -1,12 +1,16 @@
 import uuid
 from dataclasses import dataclass
+from typing import NewType
+
 from app.domain.entity import OrderItemEntity
 from app.domain.enum import OrderStatus
 from datetime import datetime
 
+OrderID = NewType('OrderID',uuid.UUID)
+
 @dataclass(slots=True,frozen=True)
 class OrderEntity:
-    id: uuid.UUID
+    id: OrderID
     description: str
     cost: int
     address_id: str

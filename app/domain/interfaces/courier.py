@@ -1,18 +1,17 @@
 from abc import ABC,abstractmethod
-import uuid
-from typing import Any
 
-from app.domain.entity.courier import CourierEntity
+from app.domain.entity.courier import CourierEntity, CourierID
+from app.domain.entity.user import UserID
 
 
 class CourierRepository(ABC):
 
     @abstractmethod
-    def get_courier_by_id(self,courier_id: uuid.UUID) -> CourierEntity:
+    def get_courier_by_id(self,courier_id: CourierID) -> CourierEntity:
         raise NotImplementedError
 
     @abstractmethod
-    def get_courier_by_user_id(self,user_id: uuid.UUID) -> CourierEntity:
+    def get_courier_by_user_id(self,user_id: UserID) -> CourierEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -24,5 +23,5 @@ class CourierRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_courier(self,courier_id: uuid.UUID) -> CourierEntity:
+    def delete_courier(self,courier_id: CourierID) -> CourierEntity:
         raise NotImplementedError

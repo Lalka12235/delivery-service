@@ -1,14 +1,14 @@
 from abc import ABC,abstractmethod
-import uuid
-from typing import Any
 
 from app.domain.entity import IngredientEntity
+from app.domain.entity.dish import DishID
+from app.domain.entity.ingredients import IngredientID
 
 
 class IngredientRepository(ABC):
 
     @abstractmethod
-    def get_ingredient_by_id(self,ingredient_id: uuid.UUID) -> IngredientEntity:
+    def get_ingredient_by_id(self,ingredient_id: IngredientID) -> IngredientEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -16,7 +16,7 @@ class IngredientRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get_ingredients_by_dish_id(self,dish_id: uuid.UUID) -> list[IngredientEntity]:
+    def get_ingredients_by_dish_id(self,dish_id: DishID) -> list[IngredientEntity]:
         raise NotImplementedError
 
     @abstractmethod
@@ -28,5 +28,5 @@ class IngredientRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_ingredient(self,ingredient_id: uuid.UUID) -> IngredientEntity:
+    def delete_ingredient(self,ingredient_id: IngredientID) -> IngredientEntity:
         raise NotImplementedError

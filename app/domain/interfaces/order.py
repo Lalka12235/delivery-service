@@ -1,26 +1,28 @@
 from abc import ABC,abstractmethod
-import uuid
-from typing import Any
 
 from app.domain.entity import OrderEntity
+from app.domain.entity.courier import CourierID
+from app.domain.entity.order import OrderID
+from app.domain.entity.restaurant import RestaurantID
+from app.domain.entity.user import UserID
 
 
 class OrderRepository(ABC):
 
     @abstractmethod
-    def get_order_by_id(self,order_id: uuid.UUID) -> OrderEntity:
+    def get_order_by_id(self,order_id: OrderID) -> OrderEntity:
         raise NotImplementedError
 
     @abstractmethod
-    def get_history_by_user(self, user_id: uuid.UUID, limit: int = 10, offset: int = 0) -> list[OrderEntity]:
+    def get_history_by_user(self, user_id: UserID, limit: int = 10, offset: int = 0) -> list[OrderEntity]:
         raise NotImplementedError
 
     @abstractmethod
-    def get_active_orders_by_restaurant(self, restaurant_id: uuid.UUID) -> list[OrderEntity]:
+    def get_active_orders_by_restaurant(self, restaurant_id: RestaurantID) -> list[OrderEntity]:
         raise NotImplementedError
 
     @abstractmethod
-    def get_current_courier_order(self, courier_id: uuid.UUID) -> OrderEntity | None:
+    def get_current_courier_order(self, courier_id: CourierID) -> OrderEntity | None:
         raise NotImplementedError
 
     @abstractmethod
@@ -32,5 +34,5 @@ class OrderRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_order(self,order_id: uuid.UUID) -> OrderEntity:
+    def delete_order(self,order_id: OrderID) -> OrderEntity:
         raise NotImplemented

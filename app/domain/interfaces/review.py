@@ -1,14 +1,15 @@
 from abc import ABC,abstractmethod
-import uuid
-from typing import Any
 
 from app.domain.entity import ReviewEntity
+from app.domain.entity.courier import CourierID
+from app.domain.entity.review import ReviewID
+from app.domain.entity.user import UserID
 
 
 class ReviewRepository(ABC):
 
     @abstractmethod
-    def get_review_by_id(self,rating_id: uuid.UUID) -> ReviewEntity:
+    def get_review_by_id(self,review_id: ReviewID) -> ReviewEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -16,11 +17,11 @@ class ReviewRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get_user_reviews_by_user_id(self,user_id: uuid.UUID) -> list[ReviewEntity]:
+    def get_user_reviews_by_user_id(self,user_id: UserID) -> list[ReviewEntity]:
         raise NotImplementedError
 
     @abstractmethod
-    def get_courier_reviews_by_courier_id(self,courier_id: uuid.UUID) -> list[ReviewEntity]:
+    def get_courier_reviews_by_courier_id(self,courier_id: CourierID) -> list[ReviewEntity]:
         raise NotImplementedError
 
     @abstractmethod
@@ -32,5 +33,5 @@ class ReviewRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_review(self,review_id: uuid.UUID) -> bool:
+    def delete_review(self,review_id: ReviewID) -> bool:
         raise NotImplementedError

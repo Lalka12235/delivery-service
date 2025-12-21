@@ -1,14 +1,13 @@
 from abc import ABC,abstractmethod
-import uuid
-from typing import Any
 
 from app.domain.entity import RestaurantEntity
+from app.domain.entity.restaurant import RestaurantID
 
 
 class RestaurantRepository(ABC):
 
     @abstractmethod
-    def get_restaurant_by_id(self,restaurant_id: uuid.UUID) -> RestaurantEntity:
+    def get_restaurant_by_id(self,restaurant_id: RestaurantID) -> RestaurantEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -24,5 +23,5 @@ class RestaurantRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete(self,restaurant_id: uuid.UUID) -> RestaurantEntity:
+    def delete(self,restaurant_id: RestaurantID) -> RestaurantEntity:
         raise NotImplementedError

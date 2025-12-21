@@ -1,14 +1,13 @@
-import uuid
 from abc import ABC,abstractmethod
-from typing import Any
 
 from app.domain.entity import UserEntity
+from app.domain.entity.user import UserID
 
 
 class UserRepository(ABC):
 
     @abstractmethod
-    def get_user_by_id(self,user_id: uuid.UUID) -> UserEntity:
+    def get_user_by_id(self,user_id: UserID) -> UserEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -24,5 +23,5 @@ class UserRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_user(self,user_id: uuid.UUID) -> UserEntity:
+    def delete_user(self,user_id: UserID) -> UserEntity:
         raise NotImplementedError

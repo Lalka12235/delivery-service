@@ -1,10 +1,12 @@
 import uuid
 from dataclasses import dataclass
+from typing import NewType
 
+ShopID = NewType('ShopID',uuid.UUID)
 
 @dataclass(slots=True,frozen=True)
 class ShopEntity:
-    id: uuid.UUID
+    id: ShopID
     title: str
     description: str
     rating: float

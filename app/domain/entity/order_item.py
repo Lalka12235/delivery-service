@@ -1,10 +1,12 @@
 import uuid
 from dataclasses import dataclass
+from typing import NewType
 
+OrderItemID = NewType('OrderItemID',uuid.UUID)
 
 @dataclass(slots=True, frozen=True)
 class OrderItemEntity:
-    id: uuid.UUID
+    id: OrderItemID
     quantity: int
     price_at_purchase: int
     order_id: uuid.UUID

@@ -1,11 +1,13 @@
 import uuid
 from dataclasses import dataclass
 from datetime import datetime
+from typing import NewType
 
+ReviewID = NewType('ReviewID',uuid.UUID)
 
 @dataclass(slots=True,frozen=True)
 class ReviewEntity:
-    id: uuid.UUID
+    id: ReviewID
     title: str
     description: str
     rating: float

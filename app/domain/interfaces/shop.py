@@ -1,13 +1,13 @@
 from abc import ABC,abstractmethod
-import uuid
 
 from app.domain.entity import ShopEntity
+from app.domain.entity.shop import ShopID
 
 
 class ShopRepository(ABC):
 
     @abstractmethod
-    def get_shop_by_id(self,shop_id: uuid.UUID) -> ShopEntity:
+    def get_shop_by_id(self,shop_id: ShopID) -> ShopEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -23,5 +23,5 @@ class ShopRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_shop(self,shop_id: uuid.UUID) -> bool:
+    def delete_shop(self,shop_id: ShopID) -> bool:
         raise NotImplementedError

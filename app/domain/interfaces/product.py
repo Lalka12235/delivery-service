@@ -1,13 +1,13 @@
 from abc import ABC,abstractmethod
-import uuid
 
 from app.domain.entity import ProductEntity
+from app.domain.entity.product import ProductID
 
 
 class ProductRepository(ABC):
 
     @abstractmethod
-    def get_product_by_id(self,product_id: uuid.UUID) -> ProductEntity:
+    def get_product_by_id(self,product_id: ProductID) -> ProductEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -23,5 +23,5 @@ class ProductRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_product(self,product_id: uuid.UUID) -> bool:
+    def delete_product(self,product_id: ProductID) -> bool:
         raise NotImplementedError
