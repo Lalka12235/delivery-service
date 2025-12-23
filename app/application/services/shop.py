@@ -16,7 +16,7 @@ class ShopService:
         return shop
 
     def get_shop_by_title(self,title: str) -> ShopEntity:
-        shop = self.shop_repo.get_shop_by_tile(title)
+        shop = self.shop_repo.get_shop_by_title(title)
         if not shop:
             raise ShopNotFound()
 

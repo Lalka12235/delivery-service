@@ -11,7 +11,7 @@ class ShopRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get_shop_by_tile(self,title: str) -> ShopEntity:
+    def get_shop_by_title(self,title: str) -> ShopEntity:
         raise NotImplementedError
 
     @abstractmethod

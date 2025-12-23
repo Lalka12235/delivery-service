@@ -15,6 +15,10 @@ class UserRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
+    def get_user_by_phone_number(self,phone_number: str) -> UserEntity:
+        raise NotImplementedError
+
+    @abstractmethod
     def create_user(self,user: UserEntity) -> UserEntity:
         raise NotImplementedError
 
