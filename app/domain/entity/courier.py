@@ -2,6 +2,7 @@ import uuid
 from dataclasses import dataclass
 from typing import NewType
 
+from app.domain.entity.user import UserID
 from app.domain.enum import CourierStatus, VehicleType
 
 CourierID = NewType('CourierID',uuid.UUID)
@@ -13,4 +14,4 @@ class CourierEntity:
     active: bool
     rating: float
     vehicle_type: VehicleType
-    user_id: uuid.UUID
+    user_id: UserID

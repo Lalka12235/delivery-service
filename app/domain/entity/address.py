@@ -2,6 +2,9 @@ import uuid
 from dataclasses import dataclass
 from typing import NewType
 
+from app.domain.entity.restaurant import RestaurantID
+from app.domain.entity.user import UserID
+
 AddressID = NewType('AddressID',uuid.UUID)
 
 @dataclass(slots=True,frozen=True)
@@ -17,6 +20,6 @@ class AddressEntity:
     house_number: str
     apartment_number: str
     floor: int
-    coords: Coordinates
-    user_id: uuid.UUID | None
-    restaurant_id: uuid.UUID | None
+    cords: Coordinates
+    user_id: UserID | None
+    restaurant_id: RestaurantID | None

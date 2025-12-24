@@ -2,6 +2,8 @@ import uuid
 from dataclasses import dataclass
 from typing import NewType
 
+from app.domain.entity.address import AddressID
+
 RestaurantID = NewType('RestaurantID',uuid.UUID)
 
 @dataclass(slots=True,frozen=True)
@@ -10,4 +12,4 @@ class RestaurantEntity:
     title: str
     description: str
     rating: float
-    address_id: uuid.UUID
+    address_id: AddressID
