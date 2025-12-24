@@ -27,5 +27,5 @@ class UserRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_user(self,user_id: UserID) -> UserEntity:
+    def delete_user(self,user_id: UserID) -> bool:
         raise NotImplementedError

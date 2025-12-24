@@ -1,5 +1,5 @@
 from app.domain.entity.shop import ShopID, ShopEntity
-from app.domain.exception.shop import ShopNotFound
+from app.domain.exception.base_exception import ShopNotFoundError
 from app.domain.interfaces.shop import ShopRepository
 
 
@@ -11,14 +11,14 @@ class ShopService:
     def get_shop_by_id(self,shop_id: ShopID) -> ShopEntity:
         shop = self.shop_repo.get_shop_by_id(shop_id)
         if not shop:
-            raise ShopNotFound()
+            raise ShopNotFoundError()
 
         return shop
 
     def get_shop_by_title(self,title: str) -> ShopEntity:
         shop = self.shop_repo.get_shop_by_title(title)
         if not shop:
-            raise ShopNotFound()
+            raise ShopNotFoundError()
 
         return shop
 
@@ -28,11 +28,11 @@ class ShopService:
     def update_shop(self,shop: ShopEntity) -> bool:
         shop_updated = self.shop_repo.update_shop(shop)
         if not shop_updated:
-            raise ShopNotFound()
+            raise ShopNotFoundError()
         return shop_updated
 
     def delete_shop(self,shop_id: ShopID) -> bool:
         shop_deleted = self.shop_repo.delete_shop(shop_id)
         if not shop_deleted:
-            raise ShopNotFound()
+            raise ShopNotFoundError()
         return shop_deleted
