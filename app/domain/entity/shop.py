@@ -11,5 +11,7 @@ class ShopEntity:
     id: ShopID
     title: str
     description: str
+    start_working_time: str
+    end_working_time: str
     rating: float
     address_id: AddressID

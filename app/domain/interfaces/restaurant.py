@@ -19,9 +19,9 @@ class RestaurantRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update(self,restaurant: RestaurantEntity) -> RestaurantEntity:
+    def update(self,restaurant: RestaurantEntity) -> bool:
         raise NotImplementedError
 
     @abstractmethod
-    def delete(self,restaurant_id: RestaurantID) -> RestaurantEntity:
+    def delete(self,restaurant_id: RestaurantID) -> bool:
         raise NotImplementedError

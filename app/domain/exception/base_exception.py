@@ -12,6 +12,12 @@ class AlreadyExists(Exception):
         self.message = f"{self.entity_name} уже существует"
         super().__init__(self.message,kwargs)
 
+class AccessDenied(Exception):
+
+    def __init__(self, detail: str = 'В доступе отказано', **kwargs):
+        super().__init__(detail, kwargs)
+
+
 class UserNotFoundError(NotFoundError):
     entity_name = "User"
 
@@ -24,6 +30,8 @@ class ReviewNotFoundError(NotFoundError):
 class OrderNotFoundError(NotFoundError):
     entity_name = "Order"
 
+class RestaurantNotFoundError(NotFoundError):
+    entity_name = 'Restaurant'
 
 
 class UserAlreadyExists(AlreadyExists):
@@ -36,7 +44,3 @@ class ReviewAlreadyExists(AlreadyExists):
     entity_name: str = 'Review'
 
 
-class AccessDenied(Exception):
-
-    def __init__(self, detail: str = 'В доступе отказано', **kwargs):
-        super().__init__(detail, kwargs)
