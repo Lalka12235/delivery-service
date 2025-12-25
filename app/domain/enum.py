@@ -3,7 +3,7 @@ from enum import Enum
 class RoleType(Enum):
     DEFAULT = 'user'
     COURIER = 'courier'
-    RESTAURANT = 'restaurant'
+    ADMIN = 'admin'
 
 
 class OrderStatus(Enum):

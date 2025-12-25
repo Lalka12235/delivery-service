@@ -6,7 +6,7 @@ from app.domain.entity.address import AddressID
 
 RestaurantID = NewType('RestaurantID',uuid.UUID)
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class RestaurantEntity:
     id: RestaurantID
     title: str

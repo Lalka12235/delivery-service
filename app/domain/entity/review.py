@@ -9,7 +9,7 @@ from app.domain.entity.user import UserID
 
 ReviewID = NewType('ReviewID',uuid.UUID)
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class ReviewEntity:
     id: ReviewID
     title: str

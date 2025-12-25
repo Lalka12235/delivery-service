@@ -10,13 +10,13 @@ from datetime import datetime
 UserID = NewType('UserID',uuid.UUID)
 
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class UserEntity:
     id: UserID
     first_name: str
-    last_name: str
+    last_name: str | None
     date_birth: datetime
-    email: str
+    email: str | None
     phone_number: str
     role: RoleType
     created_at: datetime
