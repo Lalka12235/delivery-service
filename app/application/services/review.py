@@ -1,3 +1,5 @@
+from app.application.ports.id_generator import UUIDGenerator
+from app.application.ports.id_provider import IDProvider
 from app.domain.entity import ReviewEntity
 from app.domain.entity.courier import CourierID
 from app.domain.entity.review import ReviewID
@@ -10,9 +12,17 @@ from app.domain.interfaces.review import ReviewRepository
 
 class ReviewService:
 
-    def __init__(self,review_repo: ReviewRepository,order_repo: OrderRepository):
+    def __init__(
+            self,
+            review_repo: ReviewRepository,
+            order_repo: OrderRepository,
+            id_generator: UUIDGenerator,
+            id_provider: IDProvider
+    ):
         self.review_repo = review_repo
         self.order_repo = order_repo
+        self.id_generator = id_generator
+        self.id_provider = id_provider
 
 
     def get_review_by_id(self,review_id: ReviewID) -> ReviewEntity:
@@ -54,9 +64,14 @@ class ReviewService:
         if not exist_order.status.DELIVERED:
             raise OrderNotFinished()
 
+        review_data.id = self.id_generator.generate_review_id()
         return self.review_repo.create_review(review_data)
 
     def update_review(self,review: ReviewEntity) -> bool:
+        current_user = self.id_provider.get_current_user()
+        if current_user.id != review.user_id:
+            raise AccessDenied()
+
         review_updated = self.review_repo.update_review(review)
         if not review_updated:
             raise ReviewNotFoundError()
@@ -64,6 +79,14 @@ class ReviewService:
         return review_updated
 
     def delete_review(self,review_id: ReviewID) -> bool:
+        review = self.review_repo.get_review_by_id(review_id)
+        if not review:
+            raise ReviewNotFoundError()
+
+        current_user = self.id_provider.get_current_user()
+        if review.user_id != current_user.id:
+            raise AccessDenied()
+
         review_deleted = self.review_repo.delete_review(review_id)
         if not review_deleted:
             raise ReviewNotFoundError()
