@@ -6,7 +6,7 @@ from app.domain.entity.shop import ShopID
 
 ProductID = NewType('ProductID',uuid.UUID)
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class ProductEntity:
     id: ProductID
     title: str
