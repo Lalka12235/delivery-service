@@ -9,7 +9,7 @@ from app.domain.entity.order_item import OrderItemID
 class OrderItemRepository(ABC):
 
     @abstractmethod
-    def get_orders_item_by_id(self,order_item_id: OrderItemID) -> list[OrderItemEntity]:
+    def get_order_item_by_id(self,order_item_id: OrderItemID) -> OrderItemEntity:
         raise NotImplementedError
 
     @abstractmethod

@@ -36,6 +36,9 @@ class RestaurantNotFoundError(NotFoundError):
 class ProductNotFoundError(NotFoundError):
     entity_name = 'Product'
 
+class OrderItemNotFoundError(NotFoundError):
+    entity_name = 'OrderItem'
+
 
 class UserAlreadyExists(AlreadyExists):
     entity_name: str = 'User'

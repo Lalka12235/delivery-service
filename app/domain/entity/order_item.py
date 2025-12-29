@@ -8,7 +8,7 @@ from app.domain.entity.product import ProductID
 
 OrderItemID = NewType('OrderItemID',uuid.UUID)
 
-@dataclass(slots=True, frozen=True)
+@dataclass(slots=True)
 class OrderItemEntity:
     id: OrderItemID
     quantity: int
