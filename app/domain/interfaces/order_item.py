@@ -13,6 +13,10 @@ class OrderItemRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
+    def get_order_item_by_title(self,title: str) -> OrderItemEntity:
+        raise NotImplementedError
+
+    @abstractmethod
     def get_orders_items_by_order_id(self,order_id: OrderID) -> list[OrderItemEntity]:
         raise NotImplementedError
 

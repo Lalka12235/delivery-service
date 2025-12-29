@@ -39,6 +39,12 @@ class ProductNotFoundError(NotFoundError):
 class OrderItemNotFoundError(NotFoundError):
     entity_name = 'OrderItem'
 
+class CategoryNotFoundError(NotFoundError):
+    entity_name = 'Category'
+
+class DishNotFoundError(NotFoundError):
+    entity_name = 'Dish'
+
 
 class UserAlreadyExists(AlreadyExists):
     entity_name: str = 'User'

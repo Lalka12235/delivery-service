@@ -1,4 +1,5 @@
 from abc import ABC,abstractmethod
+from datetime import datetime
 
 from app.domain.entity import OrderEntity
 from app.domain.entity.courier import CourierID
@@ -22,7 +23,7 @@ class OrderRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get_current_courier_order(self, courier_id: CourierID) -> OrderEntity | None:
+    def get_current_courier_order(self, courier_id: CourierID,date: str) -> OrderEntity:
         raise NotImplementedError
 
     @abstractmethod
@@ -30,9 +31,9 @@ class OrderRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update_order(self,order: OrderEntity) -> OrderEntity:
+    def update_order(self,order: OrderEntity) -> bool:
         raise NotImplementedError
 
     @abstractmethod
-    def delete_order(self,order_id: OrderID) -> OrderEntity:
+    def delete_order(self,order_id: OrderID) -> bool:
         raise NotImplemented
