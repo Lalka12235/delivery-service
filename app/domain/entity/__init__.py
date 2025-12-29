@@ -9,6 +9,7 @@ all = (
     'IngredientsEntity',
     'ProductEntity',
     'ShopEntity',
+    'CategoryEntity'
 )
 
 from app.domain.entity.user import UserEntity
@@ -21,3 +22,4 @@ from app.domain.entity.order_item import OrderItemEntity
 from app.domain.entity.ingredients import IngredientEntity
 from app.domain.entity.product import ProductEntity
 from app.domain.entity.shop import ShopEntity
+from app.domain.entity.category import CategoryEntity

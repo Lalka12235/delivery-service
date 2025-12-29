@@ -2,6 +2,7 @@ import uuid
 from dataclasses import dataclass
 from typing import NewType
 
+from app.domain.entity.category import CategoryID
 from app.domain.entity.shop import ShopID
 
 ProductID = NewType('ProductID',uuid.UUID)
@@ -14,3 +15,4 @@ class ProductEntity:
     weight: float
     description: str
     shop_id: ShopID
+    category_id: CategoryID

@@ -12,7 +12,7 @@ from datetime import datetime
 
 OrderID = NewType('OrderID',uuid.UUID)
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class OrderEntity:
     id: OrderID
     description: str

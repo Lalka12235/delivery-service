@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import NewType
 
 from app.domain.entity import IngredientEntity
+from app.domain.entity.category import CategoryID
 from app.domain.entity.restaurant import RestaurantID
 
 DishID = NewType('DishID',uuid.UUID)
@@ -15,3 +16,4 @@ class DishEntity:
     description: str
     ingredients: list[IngredientEntity]
     restaurant_id: RestaurantID
+    category_id: CategoryID
