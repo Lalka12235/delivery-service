@@ -28,5 +28,5 @@ class IngredientRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def delete_ingredient(self,ingredient_id: IngredientID) -> IngredientEntity:
+    def delete_ingredient(self,ingredient_id: IngredientID) -> bool:
         raise NotImplementedError

@@ -17,6 +17,10 @@ class AccessDenied(Exception):
     def __init__(self, detail: str = 'В доступе отказано', **kwargs):
         super().__init__(detail, kwargs)
 
+class BusinessError(Exception):
+
+    def __init__(self,detail: str = '',**kwargs):
+        super().__init__(detail,kwargs)
 
 class UserNotFoundError(NotFoundError):
     entity_name = "User"
@@ -45,6 +49,8 @@ class CategoryNotFoundError(NotFoundError):
 class DishNotFoundError(NotFoundError):
     entity_name = 'Dish'
 
+class IngredientNotFoundError(NotFoundError):
+    entity_name = 'Ingredient'
 
 class UserAlreadyExists(AlreadyExists):
     entity_name: str = 'User'

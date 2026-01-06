@@ -6,7 +6,7 @@ from app.domain.entity.dish import DishID
 
 IngredientID = NewType('IngredientID',uuid.UUID)
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class IngredientEntity:
     id: IngredientID
     title: str

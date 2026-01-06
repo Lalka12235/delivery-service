@@ -8,6 +8,7 @@ class RoleType(Enum):
 
 class OrderStatus(Enum):
     PENDING = 'pending'
+    ACCEPTED = 'accepted'
     COOKING = 'cooking'
     READY = 'ready'
     DELIVERY = 'delivery'
