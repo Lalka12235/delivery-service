@@ -55,6 +55,8 @@ class IngredientNotFoundError(NotFoundError):
 class CourierNotFoundError(NotFoundError):
     entity_name = 'Courier'
 
+class AddressNotFoundError(NotFoundError):
+    entity_name = 'Address'
 
 
 

@@ -7,12 +7,12 @@ from app.domain.entity.user import UserID
 
 AddressID = NewType('AddressID',uuid.UUID)
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class Coordinates:
     lat: float
     lng: float
 
-@dataclass(slots=True,frozen=True)
+@dataclass(slots=True)
 class AddressEntity:
     id: AddressID
     city: str
