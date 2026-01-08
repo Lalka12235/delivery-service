@@ -52,6 +52,14 @@ class DishNotFoundError(NotFoundError):
 class IngredientNotFoundError(NotFoundError):
     entity_name = 'Ingredient'
 
+class CourierNotFoundError(NotFoundError):
+    entity_name = 'Courier'
+
+
+
+
+
+
 class UserAlreadyExists(AlreadyExists):
     entity_name: str = 'User'
 

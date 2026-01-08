@@ -19,9 +19,9 @@ class CourierRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def update_courier(self,courier: CourierEntity) -> CourierEntity:
+    def update_courier(self,courier: CourierEntity) -> bool:
         raise NotImplementedError
 
     @abstractmethod
-    def delete_courier(self,courier_id: CourierID) -> CourierEntity:
+    def delete_courier(self,courier_id: CourierID) -> bool:
         raise NotImplementedError
