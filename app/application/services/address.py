@@ -62,3 +62,19 @@ class AddressService:
             raise AddressNotFoundError()
 
         return deleted
+
+    def generate_full_address(self,address_id: AddressID) -> str:
+        address = self.address_repo.get_address_by_id(address_id)
+        if not address:
+            raise AddressNotFoundError()
+
+        parts = [
+            address.city,
+            address.street,
+            address.house_number,
+            address.floor,
+            address.apartment_number
+        ]
+        full_address = ", ".join([str(p) for p in parts if p])
+
+        return full_address
