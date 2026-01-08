@@ -2,6 +2,7 @@ import uuid
 from abc import ABC,abstractmethod
 
 from app.domain.entity.address import AddressID
+from app.domain.entity.category import CategoryID
 from app.domain.entity.courier import CourierID
 from app.domain.entity.dish import DishID
 from app.domain.entity.ingredients import IngredientID
@@ -58,4 +59,8 @@ class UUIDGenerator(ABC):
 
     @abstractmethod
     def generate_address_id(self) -> AddressID:
+        raise NotImplementedError
+
+    @abstractmethod
+    def generate_category_id(self) -> CategoryID:
         raise NotImplementedError
