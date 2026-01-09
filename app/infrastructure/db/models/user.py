@@ -18,4 +18,4 @@ class UserModel(Base):
     phone_number: Mapped[str] = mapped_column(nullable=True)
     role: Mapped[RoleType] = mapped_column(nullable=True,default=RoleType.DEFAULT)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),nullable=True,default=datetime.now(UTC))
-    address_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('address.id'),nullable=False)
+    address_id: Mapped[uuid.UUID] = mapped_column(ForeignKey('address.id'),UUID(as_uuid=True),nullable=False)
