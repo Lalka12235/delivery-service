@@ -1,5 +1,4 @@
 from abc import ABC,abstractmethod
-from datetime import datetime
 
 from app.domain.entity import OrderEntity
 from app.domain.entity.courier import CourierID
@@ -36,4 +35,4 @@ class OrderRepository(ABC):
 
     @abstractmethod
     def delete_order(self,order_id: OrderID) -> bool:
-        raise NotImplemented
+        raise NotImplementedError

@@ -17,12 +17,12 @@ class OrderEntity:
     id: OrderID
     description: str
     cost: int
-    address_id: str
+    address: str
     order_item: list[OrderItemEntity]
     status: OrderStatus
     delivery_time: datetime
     created_at: datetime
-    updated_at: datetime
+    updated_at: datetime | None
     restaurant_id: RestaurantID | None
     shop_id: ShopID | None
     courier_id: CourierID | None
